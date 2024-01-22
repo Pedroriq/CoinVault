@@ -1,0 +1,15 @@
+{% load static %}
+{% load django_htmx %}
+{% load static tailwind_tags %}
+<html>
+  <head>
+      <title>Htmx Demo!</title>
+      {% tailwind_css %}
+      {% django_htmx_script %}
+      <script src="{% static 'htmx/htmx.min.js' %}"></script>
+      <link href="{% static 'daisy_ui/full.min.css' %}" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+  </body>
+</html>
