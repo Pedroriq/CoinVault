@@ -6,4 +6,4 @@ def index(request):
         print("HTMX")
     else:
         print("NOT HTMX")
-    return render(request, 'index.html')
+    return render(request, "index.html")
