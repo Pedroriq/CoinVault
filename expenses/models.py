@@ -2,23 +2,23 @@ from django.contrib.auth.models import User
 from django.db import models
 
 
-class Parcelas(models.Model):
-    date = models.DateField(verbose_name="Data")
-    portion = models.PositiveSmallIntegerField(verbose_name="Parcela Atual")
-    max_portion = models.PositiveSmallIntegerField(verbose_name="Quantidade de Parcelas")
+class Portions(models.Model):
+    date = models.DateField(verbose_name="Date")
+    portion = models.PositiveSmallIntegerField(verbose_name="Current Portion")
+    max_portion = models.PositiveSmallIntegerField(verbose_name="Portion Quantity")
 
 
-class Gastos(models.Model):
+class Expenses(models.Model):
     TYPE_CHOICES = {
         "FIXO": "FIXO",
         "INVESTIMENTO": "INVESTIMENTO",
         "VARIAVEL": "VARIAVEL",
     }
-    date = models.DateField(verbose_name="Data")
-    type = models.CharField(max_length=50, choices=TYPE_CHOICES, verbose_name="Tipo de Gastos")
-    value = models.FloatField(verbose_name="Valor")
-    is_entry = models.BooleanField(default=False, verbose_name="Entrada")
-    name = models.CharField(max_length=100, verbose_name="Nome")
-    portions = models.CharField(max_length=10, verbose_name="Parcela")
+    date = models.DateField(verbose_name="Date")
+    type = models.CharField(max_length=50, choices=TYPE_CHOICES, verbose_name="Expense Type")
+    value = models.FloatField(verbose_name="Value")
+    is_entry = models.BooleanField(default=False, verbose_name="Is Entry")
+    name = models.CharField(max_length=100, verbose_name="Name")
+    portions = models.CharField(max_length=10, verbose_name="Portion")
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-    parcelas_id = models.ForeignKey(Parcelas, on_delete=models.SET_NULL, null=True)
+    portions_id = models.ForeignKey(Portions, on_delete=models.SET_NULL, null=True)
