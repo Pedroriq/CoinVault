@@ -3,9 +3,9 @@ from django.db import models
 
 
 # Create your models here.
-class Estrategia(models.Model):
-    variable_expenses = models.FloatField(verbose_name="Custos Variáveis")
-    fixed_expenses = models.FloatField(verbose_name="Custos Fixos")
-    investiments = models.FloatField(verbose_name="Investimentos")
-    name = models.CharField(verbose_name="Nome", max_length=100)
+class Strategy(models.Model):
+    variable_expenses = models.FloatField(verbose_name="Variable Expenses")
+    fixed_expenses = models.FloatField(verbose_name="Fixed Expenses")
+    investments = models.FloatField(verbose_name="Investments")
+    name = models.CharField(verbose_name="Name", max_length=100)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
