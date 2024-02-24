@@ -18,5 +18,8 @@ class Investment(models.Model):
     )
     value = models.FloatField(verbose_name="Value")
     name = models.CharField(max_length=100, verbose_name="Investment Name")
-    profitability = models.FloatField(verbose_name="Profitability")
+    profitability = models.FloatField(verbose_name="Profitability", null=True, blank=True)
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.type} - {self.value}"

@@ -11,7 +11,6 @@ class Portions(models.Model):
 class Expenses(models.Model):
     TYPE_CHOICES = {
         "FIXO": "FIXO",
-        "INVESTIMENTO": "INVESTIMENTO",
         "VARIAVEL": "VARIAVEL",
     }
     date = models.DateField(verbose_name="Date")

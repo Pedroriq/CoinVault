@@ -22,5 +22,6 @@ from CoinVault import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
+    path("investments/", include('investments.urls')),
     path("__reload__/", include("django_browser_reload.urls")),
 ]
