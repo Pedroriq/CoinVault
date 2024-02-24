@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for data in dataset %}
+        {{ data.name }}<br/>
+        {{ data.value }}<br/>
+        {{ data.type }}<br/>
+        <hr/>
+    {% endfor %}
+{% endblock %}
